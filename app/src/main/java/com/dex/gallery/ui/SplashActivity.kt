@@ -1,4 +1,4 @@
-package com.dex.gallery
+package com.dex.gallery.ui
 
 import android.Manifest
 import android.app.Activity
@@ -14,10 +14,12 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Toast
+import com.dex.gallery.R
+import com.dex.gallery.data.Albums
 
 class SplashActivity : AppCompatActivity() {
 
-    private var SPLASH_TIME_OUT = 800
+    private var SPLASH_TIME_OUT = 400
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

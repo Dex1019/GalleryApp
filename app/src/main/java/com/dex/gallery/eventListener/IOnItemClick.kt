@@ -1,4 +1,4 @@
-package com.dex.gallery
+package com.dex.gallery.eventListener
 
 interface IOnItemClick {
 

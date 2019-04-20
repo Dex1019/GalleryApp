@@ -1,4 +1,4 @@
-package com.dex.gallery
+package com.dex.gallery.ui
 
 import android.app.Activity
 import android.content.Intent
@@ -13,11 +13,14 @@ import android.widget.AbsListView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.dex.gallery.R
+import com.dex.gallery.adapter.SingleAlbumAdapter
+import com.dex.gallery.eventListener.IOnItemClick
 import kotlinx.android.synthetic.main.activity_albums.*
 
 class AlbumsActivity : AppCompatActivity(), IOnItemClick {
 
-    var adapter: SingleAlbumAdapter? = null
+    private var adapter: SingleAlbumAdapter? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +31,7 @@ class AlbumsActivity : AppCompatActivity(), IOnItemClick {
         // Enable the Up button
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val folderName = intent.getStringExtra("folder_name")
+        val folderName = intent.getStringExtra("folderName")
         supportActionBar?.title = "" + folderName
         val isVideo = intent.getBooleanExtra("isVideo", false)
         initViews(folderName, isVideo)
@@ -44,7 +47,7 @@ class AlbumsActivity : AppCompatActivity(), IOnItemClick {
         val glide = Glide.with(this)
         val builder = glide.asBitmap()
 
-        rvAlbumSelected.layoutManager = GridLayoutManager(this, 2)
+        rvAlbumSelected.layoutManager = GridLayoutManager(this, 3)
         rvAlbumSelected?.setHasFixedSize(true)
         adapter = SingleAlbumAdapter(
             this,
@@ -69,8 +72,7 @@ class AlbumsActivity : AppCompatActivity(), IOnItemClick {
                     AbsListView.OnScrollListener.SCROLL_STATE_FLING -> glide.pauseRequests()
                 }
             }
-        }
-        )
+        })
     }
 
 

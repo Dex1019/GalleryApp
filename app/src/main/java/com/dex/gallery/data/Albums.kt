@@ -1,4 +1,4 @@
-package com.dex.gallery
+package com.dex.gallery.data
 
 import android.os.Parcelable
 import kotlinx.android.parcel.Parcelize

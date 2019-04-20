@@ -13,17 +13,24 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".AlbumsActivity">
-        </activity>
-        <activity android:name=".SplashActivity">
+
+
+        <activity android:name=".ui.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".SingleActivity"/>
+        <activity android:name=".ui.MainActivity"
+                  android:launchMode="singleTop"/>
+
+        <activity android:name=".ui.SingleActivity"
+                  android:parentActivityName=".ui.AlbumsActivity"/>
+
+        <activity android:name=".ui.AlbumsActivity"
+                  android:parentActivityName=".ui.MainActivity"
+                  android:launchMode="singleTop"/>
     </application>
 
 </manifest>

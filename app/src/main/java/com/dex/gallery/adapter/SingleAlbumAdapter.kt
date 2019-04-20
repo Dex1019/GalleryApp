@@ -1,4 +1,4 @@
-package com.dex.gallery
+package com.dex.gallery.adapter
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -9,34 +9,33 @@ import android.view.ViewGroup
 import com.bumptech.glide.RequestBuilder
 import com.bumptech.glide.RequestManager
 import com.bumptech.glide.request.RequestOptions
-import kotlinx.android.synthetic.main.list_layout.view.*
+import com.dex.gallery.R
+import com.dex.gallery.eventListener.IOnItemClick
+import kotlinx.android.synthetic.main.list_single_album_layout.view.*
 
-class AlbumFoldersAdapter(
-    val albumList: ArrayList<Albums>,
+class SingleAlbumAdapter(
     val context: Context,
+    val albumList: MutableList<String>,
     val options: RequestOptions,
     val glide: RequestBuilder<Bitmap>,
     val glideMain: RequestManager,
     val inOnItemClick: IOnItemClick
-) : RecyclerView.Adapter<AlbumFoldersAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<SingleAlbumAdapter.ViewHolder>() {
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val v = LayoutInflater.from(parent.context).inflate(R.layout.list_layout, parent, false)
+        val v = LayoutInflater.from(context)
+            .inflate(R.layout.list_single_album_layout, parent, false)
         return ViewHolder(v)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItems(albumList[position],
+        holder.bindItems(
+            albumList[position],
             glide,
             options,
-            inOnItemClick,
-            albumList[position].isVideo)
-
-        holder.itemView.title?.text = albumList[position].folderNames
-        if (albumList[position].isVideo)
-            holder.itemView.photoCount?.text = "" + albumList[position].imgCount + " videos"
-        else
-            holder.itemView.photoCount?.text = "" + albumList[position].imgCount + " photos"
+            inOnItemClick
+        )
     }
 
     override fun getItemCount(): Int {
@@ -45,18 +44,17 @@ class AlbumFoldersAdapter(
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
         fun bindItems(
-            albumList: Albums,
+            albumList: String,
             glide: RequestBuilder<Bitmap>,
             options: RequestOptions,
-            inOnItemClick: IOnItemClick,
-            isVideo: Boolean
+            inOnItemClick: IOnItemClick
         ) {
-            glide.load(albumList.imagePath).apply { options }.thumbnail(0.4f)
-                .into(itemView.thumbnail)
 
-            itemView.setOnClickListener { inOnItemClick.onItemClick(albumList.folderNames, isVideo) }
+            glide.load(albumList).apply { options }.thumbnail(0.4f)
+                .into(itemView.thumbnail1)
+
+            itemView.setOnClickListener { inOnItemClick.onItemClick(albumList, false) }
         }
     }
 
@@ -81,5 +79,6 @@ class AlbumFoldersAdapter(
 
         super.onViewDetachedFromWindow(holder)
     }
+
 
 }

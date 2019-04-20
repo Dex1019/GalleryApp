@@ -1,4 +1,4 @@
-package com.dex.gallery
+package com.dex.gallery.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,13 +6,15 @@ import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.view.Gravity
-import android.view.MenuItem
 import android.view.View
 import android.widget.AbsListView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
+import com.dex.gallery.R
+import com.dex.gallery.adapter.AlbumFoldersAdapter
+import com.dex.gallery.data.Albums
+import com.dex.gallery.eventListener.IOnItemClick
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.include_main_content.*
 
