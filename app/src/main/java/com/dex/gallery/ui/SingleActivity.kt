@@ -1,6 +1,8 @@
 package com.dex.gallery.ui
 
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
+import android.support.v4.content.ContextCompat
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
@@ -14,10 +16,19 @@ class SingleActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_photo)
 
-        setSupportActionBar(toolbar)
+//        setSupportActionBar(toolbar)
         // Enable the Up button
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setDisplayShowTitleEnabled(false)
+        supportActionBar?.setBackgroundDrawable(
+            ColorDrawable(
+                ContextCompat.getColor(
+                    this,
+                    R.color.colorTransparentLight
+                )
+            )
+        )
+
 
         val folderName = intent.getStringExtra("folder_name")
         Glide.with(this).load(folderName).into(imageFullScreenView)

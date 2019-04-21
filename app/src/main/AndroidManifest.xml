@@ -26,6 +26,7 @@
                   android:launchMode="singleTop"/>
 
         <activity android:name=".ui.SingleActivity"
+                  android:theme="@style/AppTheme.Transparent"
                   android:parentActivityName=".ui.AlbumsActivity"/>
 
         <activity android:name=".ui.AlbumsActivity"

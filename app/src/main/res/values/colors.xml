@@ -6,4 +6,8 @@
 
     <color name="colorTransparentDark">#ad000000</color>
     <color name="colorTransparentDark1">#263238</color>
+
+    <color name="colorTransparentLight">#29000000</color>
+
+    <color name="colorBlack">#000</color>
 </resources>

@@ -21,6 +21,7 @@
             <ImageView
                     android:id="@+id/thumbnail"
                     android:layout_width="match_parent"
+                    android:background="@color/colorTransparentDark"
                     android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"/>
@@ -28,7 +29,7 @@
 
             <RelativeLayout android:layout_width="match_parent"
                             android:orientation="horizontal"
-                            android:padding="5dp"
+                            android:padding="8dp"
                             android:background="@color/colorTransparentDark"
                             android:layout_alignParentBottom="true"
                             android:layout_height="wrap_content">
@@ -51,34 +52,6 @@
 
 
             </RelativeLayout>
-
-            <!--<TextView-->
-            <!--android:id="@+id/title"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_below="@id/thumbnail"-->
-            <!--android:paddingLeft="10dp"-->
-            <!--android:paddingRight="10dp"-->
-            <!--android:paddingTop="10dp"-->
-            <!--android:text="Camera"-->
-            <!--android:textColor="#000"-->
-            <!--android:textSize="15dp" />-->
-
-            <!--<RelativeLayout-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:layout_below="@id/title">-->
-
-            <!--<TextView-->
-            <!--android:id="@+id/photoCount"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:paddingBottom="5dp"-->
-            <!--android:paddingLeft="10dp"-->
-            <!--android:paddingRight="6dp"-->
-            <!--android:textColor="#000"-->
-            <!--android:textSize="12dp" />-->
-            <!--</RelativeLayout>-->
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>

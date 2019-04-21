@@ -2,11 +2,9 @@ package com.dex.gallery.ui
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.widget.DrawerLayout
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.view.View
 import android.widget.AbsListView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -15,7 +13,6 @@ import com.dex.gallery.R
 import com.dex.gallery.adapter.AlbumFoldersAdapter
 import com.dex.gallery.data.Albums
 import com.dex.gallery.eventListener.IOnItemClick
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.include_main_content.*
 
 class MainActivity : AppCompatActivity(), IOnItemClick {
@@ -29,10 +26,10 @@ class MainActivity : AppCompatActivity(), IOnItemClick {
         if (savedInstanceState != null)
             folderName = savedInstanceState.getString("folderName")
 
-        setSupportActionBar(my_toolbar)
+//        setSupportActionBar(my_toolbar)
         // Enable the Up button
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeAsUpIndicator(resources.getDrawable(R.drawable.ic_menu))
+//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+//        supportActionBar?.setHomeAsUpIndicator(resources.getDrawable(R.drawable.ic_menu))
 
 //        setupNavigationView()
 
@@ -42,8 +39,8 @@ class MainActivity : AppCompatActivity(), IOnItemClick {
             selectFragment(extraData)
         }
 
-        drawerLayoutListener()
-        supportActionBar?.title = "Folders"
+//        drawerLayoutListener()
+        supportActionBar?.title = "Gallery"
     }
 
 
@@ -78,25 +75,25 @@ class MainActivity : AppCompatActivity(), IOnItemClick {
 //        fab_camera?.setOnClickListener { launchCamera() }
     }
 
-    private fun drawerLayoutListener() {
-
-        drawer_layout.addDrawerListener(object : DrawerLayout.DrawerListener {
-            override fun onDrawerStateChanged(newState: Int) {
-            }
-
-            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
-            }
-
-            override fun onDrawerClosed(drawerView: View) {
-                supportActionBar?.setHomeAsUpIndicator(resources.getDrawable(R.drawable.ic_menu))
-            }
-
-            override fun onDrawerOpened(drawerView: View) {
-                supportActionBar?.setHomeAsUpIndicator(resources.getDrawable(R.drawable.ic_keyboard_backspace))
-            }
-        }
-        )
-    }
+//    private fun drawerLayoutListener() {
+//
+//        drawer_layout.addDrawerListener(object : DrawerLayout.DrawerListener {
+//            override fun onDrawerStateChanged(newState: Int) {
+//            }
+//
+//            override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
+//            }
+//
+//            override fun onDrawerClosed(drawerView: View) {
+//                supportActionBar?.setHomeAsUpIndicator(resources.getDrawable(R.drawable.ic_menu))
+//            }
+//
+//            override fun onDrawerOpened(drawerView: View) {
+//                supportActionBar?.setHomeAsUpIndicator(resources.getDrawable(R.drawable.ic_keyboard_backspace))
+//            }
+//        }
+//        )
+//    }
 
     // Navigation item click listener Kotlin source code.
 //    private fun setupNavigationView() {

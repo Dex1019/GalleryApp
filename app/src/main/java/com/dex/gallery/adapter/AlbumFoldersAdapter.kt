@@ -57,7 +57,9 @@ class AlbumFoldersAdapter(
             inOnItemClick: IOnItemClick,
             isVideo: Boolean
         ) {
-            glide.load(albumList.imagePath).apply { options }.thumbnail(0.4f)
+            glide.load(albumList.imagePath)
+                .apply { options }
+                .thumbnail(0.4f)
                 .into(itemView.thumbnail)
 
             itemView.setOnClickListener { inOnItemClick.onItemClick(albumList.folderNames, isVideo) }

@@ -27,9 +27,9 @@ class AlbumsActivity : AppCompatActivity(), IOnItemClick {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_albums)
 
-        setSupportActionBar(my_album_toolbar)
+//        setSupportActionBar(my_album_toolbar)
         // Enable the Up button
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+//        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val folderName = intent.getStringExtra("folderName")
         supportActionBar?.title = "" + folderName
