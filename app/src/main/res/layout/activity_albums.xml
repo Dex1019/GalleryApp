@@ -7,10 +7,16 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <android.support.v7.widget.RecyclerView
-            android:id="@+id/rvAlbumSelected"
+    <!--<android.support.v7.widget.RecyclerView-->
+    <!--android:id="@+id/rvAlbumSelected"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:clipToPadding="false"/>-->
+    <com.dex.gallery.GridRecyclerView
             android:layout_width="match_parent"
+            android:id="@+id/rvAlbumSelected"
             android:layout_height="match_parent"
-            android:clipToPadding="false"/>
+            android:layoutAnimation="@anim/grid_layout_animation_from_bottom"/>
+
 
 </RelativeLayout>
